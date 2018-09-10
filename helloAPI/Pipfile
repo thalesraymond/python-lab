@@ -11,6 +11,7 @@ flask-sqlalchemy = "*"
 pyodbc = "*"
 python-dotenv = "*"
 python-dateutil = "*"
+wfastcgi = "*"
 
 [dev-packages]
 
