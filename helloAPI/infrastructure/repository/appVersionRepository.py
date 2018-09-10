@@ -2,6 +2,7 @@ from typing import List
 from dateutil import parser
 
 from domain.appVersion import AppVersion
+from domain.mobilePlatform import MobilePlatform
 from infrastructure.repository import engineFactory
 
 
@@ -15,4 +16,4 @@ class AppVersionRepository:
         result = self.engine.execute('GetAppVersions')
         connection.close()
 
-        return [AppVersion(row['PlatformId'], row['Version'], bool(row['EnableVideoChat']), parser.parse(row['LastUpdate']), row['UpdatedBy']) for row in result]
+        return [AppVersion(MobilePlatform(int(row['PlatformId'])), row['Version'], bool(row['EnableVideoChat']), parser.parse(row['LastUpdate']), row['UpdatedBy']) for row in result]

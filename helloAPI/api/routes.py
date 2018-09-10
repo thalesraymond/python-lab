@@ -1,5 +1,4 @@
-from flask import render_template
 from api import app
-from api.controllers import homeController
+from api.controllers import appVersionController
 
-app.register_blueprint(homeController.home_blueprint)
+app.register_blueprint(appVersionController.app_version_blueprint)

@@ -10,7 +10,7 @@ class AppVersion:
     updatedBy: str
 
     def __init__(self, platform: MobilePlatform, version: str, enable_video_chat: bool, last_update: datetime, updated_by: str):
-        self.platform = MobilePlatform.ANDROID if platform == '1' else MobilePlatform.IOS
+        self.platform = platform
         self.version = version
         self.enableVideoChat = enable_video_chat
         self.lastUpdate = last_update
