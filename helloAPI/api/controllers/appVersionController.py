@@ -10,7 +10,7 @@ app_version_blueprint = Blueprint('app_version_blueprint', __name__, template_fo
 
 
 @app_version_blueprint.route('/', methods=['GET'])
-def get():
+def list_app_versions():
     repository = AppVersionRepository()
 
     app_versions = repository.get_app_versions()
@@ -19,7 +19,7 @@ def get():
 
 
 @app_version_blueprint.route('/<platform_name>', methods=['GET'])
-def post(platform_name):
+def get_app_version(platform_name):
     repository = AppVersionRepository()
 
     if platform_name.lower() == 'android':
