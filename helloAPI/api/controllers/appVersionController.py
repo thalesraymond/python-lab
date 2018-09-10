@@ -6,7 +6,7 @@ from api.models.appVersionModel import AppVersionModel
 from domain.mobilePlatform import MobilePlatform
 from infrastructure.repository.appVersionRepository import AppVersionRepository
 
-app_version_blueprint = Blueprint('app_version_blueprint', __name__, template_folder='templates', url_prefix='/app-version')
+app_version_blueprint = Blueprint('app_version_blueprint', __name__, template_folder='views', url_prefix='/app-version')
 
 
 @app_version_blueprint.route('/', methods=['GET'])
