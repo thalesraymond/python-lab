@@ -9,5 +9,3 @@ databaseName = parser.get('DATABASE', 'DATABASE_NAME')
 connection_string = f'mssql+pyodbc://{databaseUser}:{databasePassword}@{databaseHost}/{databaseName}?driver=SQL+Server'
 
 engine = create_engine(connection_string)
-
-print(connection_string)
