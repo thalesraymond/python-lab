@@ -9,6 +9,7 @@ flask-env = "*"
 sqlalchemy = "*"
 flask-sqlalchemy = "*"
 pyodbc = "*"
+python-dotenv = "*"
 
 [dev-packages]
 
