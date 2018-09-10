@@ -22,7 +22,11 @@ def get():
 def post(platform_name):
     repository = AppVersionRepository()
 
-    platform_filter = MobilePlatform.ANDROID if platform_name.lower() == 'android' else MobilePlatform.IOS
+    platform_filter = None
+    if platform_name.lower() == 'android':
+        platform_filter = MobilePlatform.ANDROID
+    elif platform_name.lower() == 'ios':
+        platform_filter = MobilePlatform.IOS
 
     app_versions = repository.get_app_versions()
 
