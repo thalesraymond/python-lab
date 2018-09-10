@@ -22,17 +22,15 @@ def get():
 def post(platform_name):
     repository = AppVersionRepository()
 
-    platform_filter = None
     if platform_name.lower() == 'android':
         platform_filter = MobilePlatform.ANDROID
     elif platform_name.lower() == 'ios':
         platform_filter = MobilePlatform.IOS
+    else:
+        return Response('Invalid platform name', status=400)
 
     app_versions = repository.get_app_versions()
 
     selected_version = next((AppVersionModel(domain) for domain in app_versions if domain.platform == platform_filter), None)
-
-    if selected_version is None:
-        return Response('Invalid platform name', status=400)
 
     return jsonify(selected_version.serialize())
