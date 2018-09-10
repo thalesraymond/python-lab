@@ -102,3 +102,9 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+helloAPI/config\.ini
+
+helloAPI/\.idea/
+
+helloAPI/\.vscode/
