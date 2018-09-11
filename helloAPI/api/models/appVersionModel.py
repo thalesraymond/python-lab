@@ -1,5 +1,3 @@
-from datetime import datetime
-
 from domain.appVersion import AppVersion
 from domain.mobilePlatform import MobilePlatform
 
