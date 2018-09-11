@@ -1,6 +1,5 @@
-from flask import Blueprint
-from flask import jsonify
-from flask import Response
+from flask import Blueprint, jsonify
+from flask_jwt_extended import jwt_required
 
 from api.models.appVersionModel import AppVersionModel
 from domain.mobilePlatform import MobilePlatform
@@ -10,6 +9,7 @@ app_version_blueprint = Blueprint('app_version_blueprint', __name__, template_fo
 
 
 @app_version_blueprint.route('/', methods=['GET'])
+@jwt_required
 def list_app_versions():
     repository = AppVersionRepository()
 
@@ -19,6 +19,7 @@ def list_app_versions():
 
 
 @app_version_blueprint.route('/<platform_name>', methods=['GET'])
+@jwt_required
 def get_app_version(platform_name):
     repository = AppVersionRepository()
 
@@ -27,7 +28,7 @@ def get_app_version(platform_name):
     elif platform_name.lower() == 'ios':
         platform_filter = MobilePlatform.IOS
     else:
-        return Response('Invalid platform name', status=400)
+        return jsonify({'message': 'Invalid platform name'}), 400
 
     app_versions = repository.get_app_versions()
 

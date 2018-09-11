@@ -12,6 +12,7 @@ pyodbc = "*"
 python-dotenv = "*"
 python-dateutil = "*"
 wfastcgi = "*"
+flask-jwt-extended = "*"
 
 [dev-packages]
 
