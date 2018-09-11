@@ -1,5 +1,6 @@
 import random
 
+
 class User:
     userId: int
     username: str
@@ -11,5 +12,6 @@ class User:
         self.password = password
 
     def authenticate(self):
+        # fake validation :D
         self.userId = random.randint(1, 100)
         return True
