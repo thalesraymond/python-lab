@@ -20,7 +20,7 @@ class AppVersionModel:
         self.platformName = 'Android' if domain.platform == MobilePlatform.ANDROID else 'iOS'
         self.version = domain.version
         self.enableVideoChat = domain.enableVideoChat
-        self.lastUpdate = domain.lastUpdate.strftime('%d/%m/%y')
+        self.lastUpdate = domain.lastUpdate.strftime('%d/%m/%Y')
         self.updatedBy = domain.updatedBy
 
     def serialize(self):
