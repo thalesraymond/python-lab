@@ -16,7 +16,7 @@ class AppVersionModel:
         if domain is None:
             return
 
-        self.platform = domain.platform
+        self.platform = int(domain.platform)
         self.platformName = 'Android' if domain.platform == MobilePlatform.ANDROID else 'iOS'
         self.version = domain.version
         self.enableVideoChat = domain.enableVideoChat

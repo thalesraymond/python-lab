@@ -1,6 +1,6 @@
-from enum import Enum
+from enum import IntEnum
 
 
-class MobilePlatform(Enum):
+class MobilePlatform(IntEnum):
     ANDROID = 1
     IOS = 2
