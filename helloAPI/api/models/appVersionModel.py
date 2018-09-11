@@ -26,7 +26,7 @@ class AppVersionModel:
     def serialize(self):
         return {
             'platform': self.platform,
-            'platform': self.platformName,
+            'platformName': self.platformName,
             'version': self.version,
             'enableVideoChat': self.enableVideoChat,
             'lastUpdate': self.lastUpdate,
