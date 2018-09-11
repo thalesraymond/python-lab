@@ -12,7 +12,6 @@ pyodbc = "*"
 python-dotenv = "*"
 python-dateutil = "*"
 wfastcgi = "*"
-flask-httpauth = "*"
 
 [dev-packages]
 

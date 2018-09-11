@@ -1,10 +1,8 @@
 from flask import Flask
-from flask_httpauth import HTTPTokenAuth
 
 from api.controllers import appVersionController, tokenController
 
 app = Flask(__name__)
-auth = HTTPTokenAuth(scheme='Token')
 
 if __name__ == '__main__':
     app.run()
