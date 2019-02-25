@@ -108,3 +108,5 @@ helloAPI/config\.ini
 helloAPI/\.idea/
 
 helloAPI/\.vscode/
+
+django-lab/\.idea/
